@@ -1,8 +1,8 @@
 function Header() {
 	return (
-		<header class="hero is-link">
-			<div class="hero-body">
-				<p class="title has-text-centered">Meme Generator</p>
+		<header className="hero is-link">
+			<div className="hero-body">
+				<p className="title has-text-centered">Meme Generator</p>
 			</div>
 		</header>
 	);

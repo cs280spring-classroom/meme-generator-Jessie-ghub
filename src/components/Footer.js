@@ -1,9 +1,9 @@
 function Footer() {
 	return (
-		<footer class="footer">
-			<div class="content has-text-centered">
-				This program uses the
-				<a href="https://imgflip.com/api" target="_blank">
+		<footer className="footer">
+			<div className="content has-text-centered">
+				{"This program uses the "}
+				<a href="https://imgflip.com/api" target="_blank" rel="noreferrer" >
 					Imgflip API
 				</a>.
 			</div>
