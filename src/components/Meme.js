@@ -5,15 +5,20 @@ function Meme(props) {
 		<section className="section is-medium pt-0 pb-6 has-text-centered">
 			<article className="message is-medium">
 				<div className="message-body" id="output">
-					<div className="meme">
-						<img id="img" width="800rem" height="auto" src={props.picURL} alt="" />
-						<h2 id="top-text" className="top">
-							{props.upper}
-						</h2>
-						<h2 id="bottom-text" className="bottom">
-							{props.lower}
-						</h2>
-					</div>
+					{/* avoid broken image */}
+					{props.picURL === '' ? (
+						<div className="meme" />
+					) : (
+						<div className="meme">
+							<img id="img" width="800rem" height="auto" src={props.picURL} alt="" />
+							<h2 id="top-text" className="top">
+								{props.upper}
+							</h2>
+							<h2 id="bottom-text" className="bottom">
+								{props.lower}
+							</h2>
+						</div>
+					)}
 				</div>
 			</article>
 		</section>

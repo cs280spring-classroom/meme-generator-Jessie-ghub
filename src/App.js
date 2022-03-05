@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import Meme from "./components/Meme";
 
 class App extends Component {
+  // display empty when first loaded
   constructor(props) {
     super(props);
     this.state = {
@@ -14,16 +15,16 @@ class App extends Component {
     };
   }
 
+  // update fetched value
   updateMeme = (upper, lower, url) => {
     this.setState({ upper: upper, lower: lower, picURL: url,  });
-    console.log(this.state.upper, this.state.lower,this.state.picURL,);
   };
 
   render() {
     return (
       <>
         <Header />
-        <Search updateUI={this.updateMeme} />
+        <Search updateMeme={this.updateMeme} />
         <Meme upper={this.state.upper} lower={this.state.lower} picURL={this.state.picURL} />
         <Footer />
       </>

@@ -19,6 +19,7 @@ class Search extends Component {
 		this.setState({ bottom_word: event.target.value });
 	};
 
+    // fetch meme from API and send info to App.js
 	fetchImage = async (event) => {
 		event.preventDefault();
 		const memeAPI = 'https://api.imgflip.com/get_memes';
@@ -27,8 +28,7 @@ class Search extends Component {
 			const data = response.data;
             const images = data.data.memes;
             const img = images[Math.floor(Math.random() * images.length)];
-            console.log(img.url);
-			this.props.updateUI(this.state.top_word, this.state.bottom_word, img.url);
+			this.props.updateMeme(this.state.top_word, this.state.bottom_word, img.url);
 		} catch (err) {
 			console.log(err);
 		}
@@ -80,5 +80,5 @@ class Search extends Component {
 export default Search;
 
 Search.propTypes = {
-	updateUI: PropTypes.func.isRequired
+	updateMeme: PropTypes.func.isRequired
 };
