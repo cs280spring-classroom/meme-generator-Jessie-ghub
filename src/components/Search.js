@@ -6,8 +6,8 @@ class Search extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			top_word: "",
-			bottom_word: ""
+			top_word: '',
+			bottom_word: ''
 		};
 	}
 
@@ -19,15 +19,15 @@ class Search extends Component {
 		this.setState({ bottom_word: event.target.value });
 	};
 
-    // fetch meme from API and send info to App.js
+	// fetch meme from API and send info to App.js
 	fetchImage = async (event) => {
 		event.preventDefault();
 		const memeAPI = 'https://api.imgflip.com/get_memes';
 		try {
 			const response = await axios.get(`${memeAPI}`);
 			const data = response.data;
-            const images = data.data.memes;
-            const img = images[Math.floor(Math.random() * images.length)];
+			const images = data.data.memes;
+			const img = images[Math.floor(Math.random() * images.length)];
 			this.props.updateMeme(this.state.top_word, this.state.bottom_word, img.url);
 		} catch (err) {
 			console.log(err);
@@ -63,11 +63,7 @@ class Search extends Component {
 				</div>
 				<div className="field has-addons">
 					<div className="control is-expanded">
-						<button
-							className="button is-link is-large is-fullwidth"
-							id="go-btn"
-							onClick={this.fetchImage}
-						>
+						<button className="button is-link is-large is-fullwidth" id="go-btn" onClick={this.fetchImage}>
 							Go!
 						</button>
 					</div>
